@@ -2,6 +2,11 @@ pipeline{
     agent any
 
     stages{
+        stage("Clean Up") {
+            steps {
+                deleteDir()
+            }
+        }        
         stage('checkout'){
             steps{
                 sh "git clone https://github.com/lwping82/Test.git"
